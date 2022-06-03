@@ -1,0 +1,36 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+          xmlns:core="sap.ui.core"
+controllerName="emc.fin.ar.controller.View2">
+    <Page title="{i18n>XTIT_V2}" showNavButton="true" navButtonPress="onBack">
+        <ObjectHeader title="{name}" intro="{healthBenefit}" number="{price}"
+                      numberUnit="{currency}" icon="{imageURL}">
+            <firstStatus>
+                <ObjectStatus text="{status}" state="{
+                            path : 'status',
+                            formatter: '.formatter.getStatus'
+                }"></ObjectStatus>
+            </firstStatus>
+        </ObjectHeader>
+
+        <IconTabBar>
+            <items>
+                <IconTabFilter text="More Info" icon="sap-icon://warning">
+                    <core:Fragment fragmentName="emc.fin.ar.fragments.moreInfo" type="XML"></core:Fragment>
+                </IconTabFilter>
+                <IconTabFilter text="Supplier" icon="sap-icon://supplier">
+                    <core:Fragment fragmentName="emc.fin.ar.fragments.supplier" type="XML"></core:Fragment>
+                </IconTabFilter>
+                <IconTabFilter text="Cities" icon="sap-icon://home">
+                    <core:Fragment fragmentName="emc.fin.ar.fragments.city" type="XML"></core:Fragment>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button press="onApprove" text="Approve" type="Accept"></Button>
+                <Button press="onReject" text="Reject" type="Reject"></Button>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

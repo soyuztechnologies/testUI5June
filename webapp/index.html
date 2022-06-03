@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+        <script src="https://ui5.sap.com/resources/sap-ui-core.js"
+                data-sap-ui-theme="sap_fiori_3_dark"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-resourceroots='{
+                    "emc.fin.ar":"./"
+                }'
+                data-sap-ui-bindingSyntax="complex"
+        ></script>
+
+        <script>
+            
+            var oCompContainer = new sap.ui.core.ComponentContainer({
+                name: "emc.fin.ar"
+            });
+
+            oCompContainer.placeAt("content");
+       </script>
+    </head>
+    <body class="sapUiBody">
+        <div id="content"></div>
+    </body>
+</html>
