@@ -22,7 +22,7 @@ controllerName="emc.fin.ar.controller.Add">
                 singleContainerFullSize="false" >
                 <f:content>
                     <Label text="Product Id" />
-                    <Input id="name" value="{prod>/prodData/PRODUCT_ID}" submit="onEnter"/>
+                    <Input id="name" enabled="{prod>/enable}" value="{prod>/prodData/PRODUCT_ID}" submit="onEnter"/>
                     <Label text="Name/Description" />
                     <Input value="{prod>/prodData/NAME}">
                     </Input>
@@ -46,13 +46,16 @@ controllerName="emc.fin.ar.controller.Add">
                             <core:Item text="Projectors" key="Projectors"/>
                         </items>
                     </Select>
+                    <Button text="Load Most Expensive" icon="sap-icon://mobile" press="onLoadExp" />
                 </f:content>
             </f:SimpleForm>
+            <Image id="idPhoto" width="60%" height="400px"></Image>
         </VBox>
         <footer>
             <Toolbar>
                 <ToolbarSpacer />
-                <Button text="Save" press="onSaveProduct" icon="sap-icon://save" />
+                <Button text="Save" type="Accept" id="idSave" press="onSaveProduct" icon="sap-icon://save" />
+                <Button text="Delete" type="Reject" id="idDelete" press="onDelete" icon="sap-icon://delete" />
                 <Button text="Clear" press="onClearScreen" icon="sap-icon://warning" />
             </Toolbar>
         </footer>
